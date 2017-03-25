@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\App;
+use GrahamCampbell\Throttle\Facades\Throttle;
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Http\Request;
 use Motor\Backend\Http\Controllers\Controller;
@@ -13,6 +14,8 @@ class TicketsController extends Controller
 
     public function index(Request $request, App $app)
     {
+        $throttler = Throttle::get($request, 10, 30);
+
         $client = new Client([
             'timeout' => 2.0,
         ]);
@@ -27,9 +30,13 @@ class TicketsController extends Controller
 
             if ($response->getStatusCode() == 200) {
                 $body = \GuzzleHttp\json_decode((string) $response->getBody());
-                if ($body->success == false) {
-                    return $this->respondWithJson('Invalid', []);
-                } else {
+                if ($body->success == false || (isset($body->data) && $body->data->Nachname != $request->last_name)) {
+                    if (!$throttler->attempt($request)) {
+                        return response()->json(['message' => 'Blocked', 'data' => []], 429);
+                    }
+                    return response()->json(['message' => 'Invalid', 'data' => []], 400);
+                } elseif($body->data->Nachname == $request->get('last_name')) {
+                    $throttler->clear($request);
                     return $this->respondWithJson('Valid', $body);
                 }
             }

@@ -9,7 +9,8 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.4.*",
-        "dfox288/motor-backend": "0.2.*"
+        "dfox288/motor-backend": "0.2.*",
+        "graham-campbell/throttle": "^5.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
