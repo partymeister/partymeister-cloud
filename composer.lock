@@ -444,16 +444,16 @@
         },
         {
             "name": "dfox288/motor-backend",
-            "version": "0.2.4",
+            "version": "0.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dfox288/motor-backend.git",
-                "reference": "5dc9366321f742eed2e12a2c9e14125df41c4d8a"
+                "reference": "b43e9f4248c14d196323eee001b595f0f00ddb93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dfox288/motor-backend/zipball/5dc9366321f742eed2e12a2c9e14125df41c4d8a",
-                "reference": "5dc9366321f742eed2e12a2c9e14125df41c4d8a",
+                "url": "https://api.github.com/repos/dfox288/motor-backend/zipball/b43e9f4248c14d196323eee001b595f0f00ddb93",
+                "reference": "b43e9f4248c14d196323eee001b595f0f00ddb93",
                 "shasum": ""
             },
             "require": {
@@ -517,20 +517,20 @@
             "keywords": [
                 "motor"
             ],
-            "time": "2017-03-13T17:13:58+00:00"
+            "time": "2017-03-25T22:22:00+00:00"
         },
         {
             "name": "dfox288/motor-core",
-            "version": "0.2.0",
+            "version": "0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dfox288/motor-core.git",
-                "reference": "fae2aa3f6f4d4a09d46ed2702668cd0fd0470b9b"
+                "reference": "f66be72ddc7eaca6c59d221b0e781de4e2dcecee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dfox288/motor-core/zipball/fae2aa3f6f4d4a09d46ed2702668cd0fd0470b9b",
-                "reference": "fae2aa3f6f4d4a09d46ed2702668cd0fd0470b9b",
+                "url": "https://api.github.com/repos/dfox288/motor-core/zipball/f66be72ddc7eaca6c59d221b0e781de4e2dcecee",
+                "reference": "f66be72ddc7eaca6c59d221b0e781de4e2dcecee",
                 "shasum": ""
             },
             "require-dev": {
@@ -556,7 +556,7 @@
             "keywords": [
                 "motor"
             ],
-            "time": "2017-03-12T20:30:42+00:00"
+            "time": "2017-03-25T22:23:01+00:00"
         },
         {
             "name": "dimsav/laravel-translatable",
@@ -1123,16 +1123,16 @@
         },
         {
             "name": "fideloper/proxy",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fideloper/TrustedProxy.git",
-                "reference": "b270bfa52915e55cfb67faa0f16863a479c36121"
+                "reference": "4ac60dbd4bcd6636bf231ea0fd87c40ece4bdce0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/b270bfa52915e55cfb67faa0f16863a479c36121",
-                "reference": "b270bfa52915e55cfb67faa0f16863a479c36121",
+                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/4ac60dbd4bcd6636bf231ea0fd87c40ece4bdce0",
+                "reference": "4ac60dbd4bcd6636bf231ea0fd87c40ece4bdce0",
                 "shasum": ""
             },
             "require": {
@@ -1146,7 +1146,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.3-dev"
                 }
             },
             "autoload": {
@@ -1170,7 +1170,7 @@
                 "proxy",
                 "trusted proxy"
             ],
-            "time": "2016-12-20T14:23:22+00:00"
+            "time": "2017-03-23T23:17:29+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -1287,16 +1287,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "0d6c7ca039329247e4f0f8f8f6506810e8248855"
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/0d6c7ca039329247e4f0f8f8f6506810e8248855",
-                "reference": "0d6c7ca039329247e4f0f8f8f6506810e8248855",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
+                "reference": "f5b8a8512e2b58b0071a7280e39f14f72e05d87c",
                 "shasum": ""
             },
             "require": {
@@ -1348,7 +1348,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-02-27T10:51:17+00:00"
+            "time": "2017-03-20T17:10:46+00:00"
         },
         {
             "name": "intervention/image",
@@ -1720,16 +1720,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.15",
+            "version": "v5.4.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ecc6468b8af30b77566a8519ce8898740ef691d7"
+                "reference": "6cf379ec34d08bcdc9c7183e369a8fdf04ade80d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ecc6468b8af30b77566a8519ce8898740ef691d7",
-                "reference": "ecc6468b8af30b77566a8519ce8898740ef691d7",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6cf379ec34d08bcdc9c7183e369a8fdf04ade80d",
+                "reference": "6cf379ec34d08bcdc9c7183e369a8fdf04ade80d",
                 "shasum": ""
             },
             "require": {
@@ -1845,7 +1845,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-03-02T14:41:40+00:00"
+            "time": "2017-03-21T19:34:41+00:00"
         },
         {
             "name": "laravelcollective/html",
@@ -1945,16 +1945,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.35",
+            "version": "1.0.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "dda7f3ab94158a002d9846a97dc18ebfb7acc062"
+                "reference": "78b5cc4feb61a882302df4fbaf63b7662e5e4ccd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/dda7f3ab94158a002d9846a97dc18ebfb7acc062",
-                "reference": "dda7f3ab94158a002d9846a97dc18ebfb7acc062",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/78b5cc4feb61a882302df4fbaf63b7662e5e4ccd",
+                "reference": "78b5cc4feb61a882302df4fbaf63b7662e5e4ccd",
                 "shasum": ""
             },
             "require": {
@@ -2024,7 +2024,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-02-09T11:33:58+00:00"
+            "time": "2017-03-22T15:43:14+00:00"
         },
         {
             "name": "league/fractal",
@@ -2779,21 +2779,21 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.5.2",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "5677cfe02397dd6b58c861870dfaa5d9007d3954"
+                "reference": "0b7bdfb180e72c8d76e75a649ced67e392201458"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/5677cfe02397dd6b58c861870dfaa5d9007d3954",
-                "reference": "5677cfe02397dd6b58c861870dfaa5d9007d3954",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/0b7bdfb180e72c8d76e75a649ced67e392201458",
+                "reference": "0b7bdfb180e72c8d76e75a649ced67e392201458",
                 "shasum": ""
             },
             "require": {
                 "paragonie/random_compat": "^1.0|^2.0",
-                "php": ">=5.4"
+                "php": "^5.4 || ^7.0"
             },
             "replace": {
                 "rhumsaa/uuid": "self.version"
@@ -2857,7 +2857,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2016-11-22T19:21:44+00:00"
+            "time": "2017-03-18T15:38:09+00:00"
         },
         {
             "name": "spatie/laravel-fractal",
@@ -2959,16 +2959,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "4.13.1",
+            "version": "4.13.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "0b0d7b06ce41bf671032f468edb58945ffca3dfc"
+                "reference": "bbbdddb4840f73d0d9f54f62838a67bdfbc2d2dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/0b0d7b06ce41bf671032f468edb58945ffca3dfc",
-                "reference": "0b0d7b06ce41bf671032f468edb58945ffca3dfc",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/bbbdddb4840f73d0d9f54f62838a67bdfbc2d2dc",
+                "reference": "bbbdddb4840f73d0d9f54f62838a67bdfbc2d2dc",
                 "shasum": ""
             },
             "require": {
@@ -3026,20 +3026,20 @@
                 "media",
                 "spatie"
             ],
-            "time": "2017-03-08T16:32:13+00:00"
+            "time": "2017-03-22T18:34:06+00:00"
         },
         {
             "name": "spatie/laravel-permission",
-            "version": "1.11.1",
+            "version": "1.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "e1bba43dca22d95b5965dea929aebe94acbae941"
+                "reference": "837ff988016824318efe30c32947146c393a273f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/e1bba43dca22d95b5965dea929aebe94acbae941",
-                "reference": "e1bba43dca22d95b5965dea929aebe94acbae941",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/837ff988016824318efe30c32947146c393a273f",
+                "reference": "837ff988016824318efe30c32947146c393a273f",
                 "shasum": ""
             },
             "require": {
@@ -3079,7 +3079,7 @@
                 "security",
                 "spatie"
             ],
-            "time": "2017-03-12T07:58:04+00:00"
+            "time": "2017-03-14T19:14:04+00:00"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -4364,7 +4364,7 @@
         },
         {
             "name": "wpb/string-blade-compiler",
-            "version": "3.4.x-dev",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TerrePorter/StringBladeCompiler.git",
@@ -5186,16 +5186,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.15",
+            "version": "5.7.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "b99112aecc01f62acf3d81a3f59646700a1849e5"
+                "reference": "68752b665d3875f9a38a357e3ecb35c79f8673bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b99112aecc01f62acf3d81a3f59646700a1849e5",
-                "reference": "b99112aecc01f62acf3d81a3f59646700a1849e5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/68752b665d3875f9a38a357e3ecb35c79f8673bf",
+                "reference": "68752b665d3875f9a38a357e3ecb35c79f8673bf",
                 "shasum": ""
             },
             "require": {
@@ -5264,7 +5264,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-03-02T15:22:43+00:00"
+            "time": "2017-03-19T16:52:12+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

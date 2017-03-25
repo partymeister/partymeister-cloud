@@ -6,4 +6,29 @@
  * more information on how to use this
  */
 
-return [];
+return [
+    'projects' => [
+        'name'   => 'backend/projects.projects',
+        'values' => [
+            'read',
+            'write',
+            'delete'
+        ]
+    ],
+    'apps'     => [
+        'name'   => 'backend/apps.apps',
+        'values' => [
+            'read',
+            'write',
+            'delete'
+        ]
+    ],
+    'websites' => [
+        'name'   => 'backend/websites.websites',
+        'values' => [
+            'read',
+            'write',
+            'delete'
+        ]
+    ],
+];
