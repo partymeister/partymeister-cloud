@@ -37,7 +37,14 @@ class TicketsController extends Controller
                     return response()->json(['message' => 'Invalid', 'data' => []], 400);
                 } elseif($body->data->Nachname == $request->get('last_name')) {
                     $throttler->clear($request);
-                    return $this->respondWithJson('Valid', $body);
+                    $response = [
+                        'first_name' => $body->data->Vorname,
+                        'last_name' => $body->data->Nachname,
+                        'code' => $body->data->Code,
+                        'type' => $body->data->TicketArt,
+                        'order_number' => $body->data->Betreff
+                    ];
+                    return $this->respondWithJson('Valid', $response);
                 }
             }
         } catch (RequestException $e) {
