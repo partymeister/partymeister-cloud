@@ -193,6 +193,7 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         Motor\Core\Providers\MotorServiceProvider::class,
         Motor\Backend\Providers\MotorServiceProvider::class,
+        Motor\CMS\Providers\MotorServiceProvider::class,
 
         GrahamCampbell\Throttle\ThrottleServiceProvider::class,
 

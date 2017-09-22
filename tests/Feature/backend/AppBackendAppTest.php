@@ -1,13 +1,16 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+namespace Tests\Feature;
+
 use Illuminate\Foundation\Testing\DatabaseTransactions;
+use Tests\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\App;
 
 class AppBackendAppTest extends TestCase
 {
 
+    //use RefreshDatabase;
     use DatabaseTransactions;
 
     protected $user;
@@ -25,8 +28,8 @@ class AppBackendAppTest extends TestCase
         'clients',
         'permissions',
         'roles',
-        'user_has_permissions',
-        'user_has_roles',
+        'model_has_permissions',
+        'model_has_roles',
         'role_has_permissions',
         'media'
     ];
@@ -36,7 +39,10 @@ class AppBackendAppTest extends TestCase
     {
         parent::setUp();
 
-        $this->withFactories(__DIR__.'/../../../../database/factories');
+        //include_once(__DIR__.'/../../../database/factories/ModelFactory.php');
+        //include_once(__DIR__.'/../../../packages/dfox288/motor-backend/database/factories/ModelFactory.php');
+
+        //$this->withFactories(__DIR__.'/../../../../database/factories');
 
         $this->addDefaults();
     }
@@ -57,9 +63,9 @@ class AppBackendAppTest extends TestCase
     /** @test */
     public function can_see_grid_without_app()
     {
-        $this->visit('/backend/apps')
-            ->see(trans('backend/apps.apps'))
-            ->see(trans('motor-backend::backend/global.no_records'));
+        $this->get('/backend/apps')
+            ->assertViewHas(trans('backend/apps.apps'))
+            ->assertViewHas(trans('motor-backend::backend/global.no_records'));
     }
 
     /** @test */

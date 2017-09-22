@@ -1,5 +1,7 @@
 <?php
 
+require_once(__DIR__.'/../../packages/dfox288/motor-backend/database/factories/ModelFactory.php');
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -11,32 +13,33 @@
 |
 */
 
-/** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
-
-    return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
-        'remember_token' => str_random(10),
-    ];
-});
-
 $factory->define(App\Models\Project::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->word
+        'name'       => $faker->word,
+        'api_token'  => str_random(60),
+        'subdomain'  => $faker->url,
+        'client_id'  => factory(Motor\Backend\Models\Client::class)->create()->id,
+        'created_by' => factory(Motor\Backend\Models\User::class)->create()->id,
+        'updated_by' => factory(Motor\Backend\Models\User::class)->create()->id,
     ];
 });
 
 $factory->define(App\Models\App::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->word
+        'name'       => $faker->word,
+        'client_id'  => factory(Motor\Backend\Models\Client::class)->create()->id,
+        'project_id' => factory(App\Models\Project::class)->create()->id,
+        'created_by' => factory(Motor\Backend\Models\User::class)->create()->id,
+        'updated_by' => factory(Motor\Backend\Models\User::class)->create()->id,
     ];
 });
 
 $factory->define(App\Models\Website::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->word
+        'name'       => $faker->word,
+        'client_id'  => factory(Motor\Backend\Models\Client::class)->create()->id,
+        'project_id' => factory(App\Models\Project::class)->create()->id,
+        'created_by' => factory(Motor\Backend\Models\User::class)->create()->id,
+        'updated_by' => factory(Motor\Backend\Models\User::class)->create()->id,
     ];
 });

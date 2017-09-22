@@ -25,8 +25,8 @@ class AppBackendProjectTest extends TestCase
         'clients',
         'permissions',
         'roles',
-        'user_has_permissions',
-        'user_has_roles',
+        'model_has_permissions',
+        'model_has_roles',
         'role_has_permissions',
         'media'
     ];
@@ -57,9 +57,11 @@ class AppBackendProjectTest extends TestCase
     /** @test */
     public function can_see_grid_without_project()
     {
-        $this->visit('/backend/projects')
-            ->see(trans('backend/projects.projects'))
-            ->see(trans('motor-backend::backend/global.no_records'));
+        $this->browse(function ($browser) {
+            $browser->visit('/backend/projects')
+                ->see(trans('backend/projects.projects'))
+                ->see(trans('motor-backend::backend/global.no_records'));
+        });
     }
 
     /** @test */
