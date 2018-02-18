@@ -9,10 +9,12 @@
     "require": {
         "php": ">=7.0.0",
         "laravel/framework": "5.5.*",
-        "dfox288/motor-backend": "0.3.*",
-        "dfox288/motor-cms": "0.3.*",
+        "motor-cms/motor-backend": "0.3.*",
+        "motor-cms/motor-cms": "0.3.*",
         "graham-campbell/throttle": "^6.0",
-        "barryvdh/laravel-debugbar": "dev-master"
+        "barryvdh/laravel-debugbar": "dev-master",
+        "laravel/tinker": "^1.0",
+        "tymon/jwt-auth": "dev-develop"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
