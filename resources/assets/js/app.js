@@ -17,6 +17,12 @@ require('mediaelement');
 require('@fancyapps/fancybox');
 require('@claviska/jquery-minicolors');
 
+import fontawesome from '@fortawesome/fontawesome';
+import solid from '@fortawesome/fontawesome-free-solid';
+import brands from '@fortawesome/fontawesome-free-brands';
+import regular from '@fortawesome/fontawesome-free-regular';
+
+fontawesome.library.add(solid, brands, regular);
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
