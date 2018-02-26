@@ -195,7 +195,7 @@ return [
         Motor\Backend\Providers\MotorServiceProvider::class,
         Motor\CMS\Providers\MotorServiceProvider::class,
 
-        GrahamCampbell\Throttle\ThrottleServiceProvider::class,
+        //GrahamCampbell\Throttle\ThrottleServiceProvider::class,
 
     ],
 
@@ -253,7 +253,7 @@ return [
         'Menu'        => Lavary\Menu\Facade::class,
         'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
 
-        'Throttle' => GrahamCampbell\Throttle\Facades\Throttle::class
+        //'Throttle' => GrahamCampbell\Throttle\Facades\Throttle::class
     ],
 
 ];

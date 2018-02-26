@@ -13,7 +13,20 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->overrideDbPort();
+    }
+
+    /**
+     * Override the database port under conditions
+     */
+    public function overrideDbPort()
+    {
+        if ($this->app->isLocal() && $this->app->runningInConsole()) {
+            // Override the port so you can tunnel into homestead.
+            if ($port = config('database.host-port')) {
+                config()->set('database.connections.mysql.port', $port);
+            }
+        }
     }
 
     /**

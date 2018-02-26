@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4289a75de1ccbd684db7452e1cfd33c0",
+    "content-hash": "b33f7ba81d24cb5e144f2c8abad820b9",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -1957,16 +1957,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.34",
+            "version": "v5.5.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "1de7c0aec13eadbdddc2d1ba4019b064b2c6b966"
+                "reference": "b0e15382ecf51a082ef8b2ae0d26f62972f6c3ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/1de7c0aec13eadbdddc2d1ba4019b064b2c6b966",
-                "reference": "1de7c0aec13eadbdddc2d1ba4019b064b2c6b966",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/b0e15382ecf51a082ef8b2ae0d26f62972f6c3ce",
+                "reference": "b0e15382ecf51a082ef8b2ae0d26f62972f6c3ce",
                 "shasum": ""
             },
             "require": {
@@ -2023,7 +2023,7 @@
                 "illuminate/translation": "self.version",
                 "illuminate/validation": "self.version",
                 "illuminate/view": "self.version",
-                "tightenco/collect": "self.version"
+                "tightenco/collect": "<5.5.33"
             },
             "require-dev": {
                 "aws/aws-sdk-php": "~3.0",
@@ -2087,7 +2087,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-02-06T15:36:55+00:00"
+            "time": "2018-02-22T19:56:29+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2269,6 +2269,64 @@
                 "laravel"
             ],
             "time": "2017-10-30T16:48:59+00:00"
+        },
+        {
+            "name": "lcobucci/jwt",
+            "version": "3.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lcobucci/jwt.git",
+                "reference": "0b5930be73582369e10c4d4bb7a12bac927a203c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/0b5930be73582369e10c4d4bb7a12bac927a203c",
+                "reference": "0b5930be73582369e10c4d4bb7a12bac927a203c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "mdanter/ecc": "~0.3.1",
+                "mikey179/vfsstream": "~1.5",
+                "phpmd/phpmd": "~2.2",
+                "phpunit/php-invoker": "~1.1",
+                "phpunit/phpunit": "~4.5",
+                "squizlabs/php_codesniffer": "~2.3"
+            },
+            "suggest": {
+                "mdanter/ecc": "Required to use Elliptic Curves based algorithms."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lcobucci\\JWT\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Luís Otávio Cobucci Oblonczyk",
+                    "email": "lcobucci@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple library to work with JSON Web Token and JSON Web Signature",
+            "keywords": [
+                "JWS",
+                "jwt"
+            ],
+            "time": "2017-09-01T08:23:26+00:00"
         },
         {
             "name": "league/flysystem",
@@ -2705,16 +2763,16 @@
         },
         {
             "name": "motor-cms/motor-backend",
-            "version": "0.3.20",
+            "version": "0.3.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/motor-cms/motor-backend.git",
-                "reference": "2aa30a8d0961627df5ce3b1d292582167a907596"
+                "reference": "f4692c61ff0e8a2de4e0447c2b24e85cbed57269"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/motor-cms/motor-backend/zipball/2aa30a8d0961627df5ce3b1d292582167a907596",
-                "reference": "2aa30a8d0961627df5ce3b1d292582167a907596",
+                "url": "https://api.github.com/repos/motor-cms/motor-backend/zipball/f4692c61ff0e8a2de4e0447c2b24e85cbed57269",
+                "reference": "f4692c61ff0e8a2de4e0447c2b24e85cbed57269",
                 "shasum": ""
             },
             "require": {
@@ -2727,7 +2785,7 @@
                 "guzzlehttp/guzzle": "^6.3",
                 "intervention/imagecache": "^2.3",
                 "kalnoy/nestedset": "^4.3",
-                "kris/laravel-form-builder": "^1.14",
+                "kris/laravel-form-builder": "^1.12",
                 "laracasts/flash": "^3.0",
                 "laravel/framework": "5.5.*",
                 "laravel/tinker": "~1.0",
@@ -2742,7 +2800,6 @@
                 "spatie/laravel-medialibrary": "^6.1",
                 "spatie/laravel-permission": "^2.6",
                 "symfony/intl": "^3.3",
-                "tymon/jwt-auth": "1.0.0-rc.1",
                 "wpb/string-blade-compiler": "^3.5"
             },
             "require-dev": {
@@ -2782,7 +2839,7 @@
             "keywords": [
                 "motor"
             ],
-            "time": "2018-02-09T11:26:21+00:00"
+            "time": "2017-11-24T00:48:56+00:00"
         },
         {
             "name": "motor-cms/motor-cms",
@@ -3683,16 +3740,16 @@
         },
         {
             "name": "spatie/image-optimizer",
-            "version": "1.0.11",
+            "version": "1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image-optimizer.git",
-                "reference": "12eacb85a70158f64d60f39d32a2a86d84ff6b89"
+                "reference": "73906c29290baf047727ba5c1df6d7a3f1e3df22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/12eacb85a70158f64d60f39d32a2a86d84ff6b89",
-                "reference": "12eacb85a70158f64d60f39d32a2a86d84ff6b89",
+                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/73906c29290baf047727ba5c1df6d7a3f1e3df22",
+                "reference": "73906c29290baf047727ba5c1df6d7a3f1e3df22",
                 "shasum": ""
             },
             "require": {
@@ -3728,7 +3785,7 @@
                 "image-optimizer",
                 "spatie"
             ],
-            "time": "2018-02-08T14:45:11+00:00"
+            "time": "2018-02-22T18:36:53+00:00"
         },
         {
             "name": "spatie/laravel-fractal",
@@ -3880,16 +3937,16 @@
         },
         {
             "name": "spatie/laravel-permission",
-            "version": "2.9.0",
+            "version": "2.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "4d47ef1644ed451f1ea99d1c44443a3ad9bacfd4"
+                "reference": "8f5508a2e4cdc3e6657a31ac33d59bbda0cf5b10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/4d47ef1644ed451f1ea99d1c44443a3ad9bacfd4",
-                "reference": "4d47ef1644ed451f1ea99d1c44443a3ad9bacfd4",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/8f5508a2e4cdc3e6657a31ac33d59bbda0cf5b10",
+                "reference": "8f5508a2e4cdc3e6657a31ac33d59bbda0cf5b10",
                 "shasum": ""
             },
             "require": {
@@ -3940,7 +3997,7 @@
                 "security",
                 "spatie"
             ],
-            "time": "2018-02-07T16:53:52+00:00"
+            "time": "2018-02-23T16:26:28+00:00"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -5253,33 +5310,34 @@
         },
         {
             "name": "tymon/jwt-auth",
-            "version": "1.0.0-rc.1",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tymondesigns/jwt-auth.git",
-                "reference": "6adc5c9df836405c47abc2f4c836872effb71ead"
+                "reference": "d5220f6a84cbb8300f6f2f0f20aa908d072b4e4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tymondesigns/jwt-auth/zipball/6adc5c9df836405c47abc2f4c836872effb71ead",
-                "reference": "6adc5c9df836405c47abc2f4c836872effb71ead",
+                "url": "https://api.github.com/repos/tymondesigns/jwt-auth/zipball/d5220f6a84cbb8300f6f2f0f20aa908d072b4e4b",
+                "reference": "d5220f6a84cbb8300f6f2f0f20aa908d072b4e4b",
                 "shasum": ""
             },
             "require": {
-                "illuminate/auth": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.*",
-                "illuminate/contracts": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.*",
-                "illuminate/http": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.*",
-                "illuminate/support": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.*",
+                "illuminate/auth": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.*",
+                "illuminate/contracts": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.*",
+                "illuminate/http": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.*",
+                "illuminate/support": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.*",
+                "lcobucci/jwt": "^3.2",
                 "namshi/jose": "^7.0",
                 "nesbot/carbon": "^1.0",
                 "php": "^5.5.9 || ^7.0"
             },
             "require-dev": {
                 "cartalyst/sentinel": "2.0.*",
-                "illuminate/console": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.*",
-                "illuminate/database": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.*",
-                "illuminate/routing": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.*",
-                "mockery/mockery": "0.9.*",
+                "illuminate/console": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.*",
+                "illuminate/database": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.*",
+                "illuminate/routing": "5.1.* || 5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.*",
+                "mockery/mockery": ">=0.9.9",
                 "phpunit/phpunit": "~4.8 || ~6.0"
             },
             "type": "library",
@@ -5323,7 +5381,7 @@
                 "jwt",
                 "laravel"
             ],
-            "time": "2017-08-30T17:57:47+00:00"
+            "time": "2018-02-07T20:55:14+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -5857,21 +5915,21 @@
         },
         {
             "name": "orchestra/testbench",
-            "version": "v3.5.3",
+            "version": "v3.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench.git",
-                "reference": "8be931a877025680524046987f4822405c3291be"
+                "reference": "fd032489df469d611a264083e62db96677c9061e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench/zipball/8be931a877025680524046987f4822405c3291be",
-                "reference": "8be931a877025680524046987f4822405c3291be",
+                "url": "https://api.github.com/repos/orchestral/testbench/zipball/fd032489df469d611a264083e62db96677c9061e",
+                "reference": "fd032489df469d611a264083e62db96677c9061e",
                 "shasum": ""
             },
             "require": {
-                "laravel/framework": "~5.5.20",
-                "orchestra/testbench-core": "~3.5.5",
+                "laravel/framework": "~5.5.34",
+                "orchestra/testbench-core": "~3.5.9",
                 "php": ">=7.0",
                 "phpunit/phpunit": "~6.0"
             },
@@ -5909,20 +5967,20 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2017-12-25T11:41:02+00:00"
+            "time": "2018-02-20T05:30:39+00:00"
         },
         {
             "name": "orchestra/testbench-core",
-            "version": "v3.5.8",
+            "version": "v3.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench-core.git",
-                "reference": "db38993c4fc2d54684418c224cd7edfba7770031"
+                "reference": "997a5dfade0cfb9c88d5e1f2bf4ff76900311333"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/db38993c4fc2d54684418c224cd7edfba7770031",
-                "reference": "db38993c4fc2d54684418c224cd7edfba7770031",
+                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/997a5dfade0cfb9c88d5e1f2bf4ff76900311333",
+                "reference": "997a5dfade0cfb9c88d5e1f2bf4ff76900311333",
                 "shasum": ""
             },
             "require": {
@@ -5975,7 +6033,7 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2018-02-18T09:54:23+00:00"
+            "time": "2018-02-20T04:07:40+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -6233,16 +6291,16 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "1.7.4",
+            "version": "1.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "9f901e29c93dae4aa77c0bb161df4276f9c9a1be"
+                "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/9f901e29c93dae4aa77c0bb161df4276f9c9a1be",
-                "reference": "9f901e29c93dae4aa77c0bb161df4276f9c9a1be",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/dfd6be44111a7c41c2e884a336cc4f461b3b2401",
+                "reference": "dfd6be44111a7c41c2e884a336cc4f461b3b2401",
                 "shasum": ""
             },
             "require": {
@@ -6292,7 +6350,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2018-02-11T18:49:29+00:00"
+            "time": "2018-02-19T10:16:54+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -7395,7 +7453,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "barryvdh/laravel-debugbar": 20
+        "barryvdh/laravel-debugbar": 20,
+        "tymon/jwt-auth": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

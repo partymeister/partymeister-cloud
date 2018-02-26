@@ -1,6 +1,6 @@
 <?php
 
-require_once(__DIR__.'/../../packages/dfox288/motor-backend/database/factories/ModelFactory.php');
+require(realpath(__DIR__.'/../../packages/dfox288/motor-backend/database/factories/ModelFactory.php'));
 
 /*
 |--------------------------------------------------------------------------

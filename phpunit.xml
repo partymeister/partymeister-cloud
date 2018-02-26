@@ -24,6 +24,7 @@
     </filter>
     <php>
         <env name="DB_DATABASE" value="partymeister-cloud_test"/>
+        <env name="DB_PORT" value="33060"/>
         <env name="APP_ENV" value="testing"/>
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>

@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use Closure;
 use Laravel\Dusk\TestCase as BaseTestCase;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
@@ -22,6 +23,11 @@ abstract class DuskTestCase extends BaseTestCase
         static::startChromeDriver();
     }
 
+    public function browse(Closure $callback)
+    {
+        parent::browse($callback);
+        static::$browsers->first()->driver->manage()->deleteAllCookies();
+    }
     /**
      * Create the RemoteWebDriver instance.
      *
