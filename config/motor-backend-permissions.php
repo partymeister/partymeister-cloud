@@ -7,7 +7,7 @@
  */
 
 return [
-    'projects' => [
+    'projects'                 => [
         'name'   => 'backend/projects.projects',
         'values' => [
             'read',
@@ -15,7 +15,7 @@ return [
             'delete'
         ]
     ],
-    'apps'     => [
+    'apps'                     => [
         'name'   => 'backend/apps.apps',
         'values' => [
             'read',
@@ -23,8 +23,24 @@ return [
             'delete'
         ]
     ],
-    'websites' => [
+    'websites'                 => [
         'name'   => 'backend/websites.websites',
+        'values' => [
+            'read',
+            'write',
+            'delete'
+        ]
+    ],
+    'project_navigations'      => [
+        'name'   => 'backend/project_navigations.project_navigations',
+        'values' => [
+            'read',
+            'write',
+            'delete'
+        ]
+    ],
+    'project_navigation_trees' => [
+        'name'   => 'backend/project_navigation_trees.project_navigation_trees',
         'values' => [
             'read',
             'write',

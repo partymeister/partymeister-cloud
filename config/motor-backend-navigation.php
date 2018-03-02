@@ -32,7 +32,16 @@ return [
                     'roles'       => [ 'SuperAdmin' ],
                     'permissions' => [ 'apps.read' ],
                 ],
-                300 => [ // <-- !!! replace 479 with your own sort position !!!
+                300 => [ // <-- !!! replace 883 with your own sort position !!!
+                    'slug'        => 'project_navigation_trees',
+                    'name'        => 'backend/project_navigation_trees.project_navigation_trees',
+                    'icon'        => 'fa fa-plus',
+                    'route'       => 'backend.project_navigation_trees.index',
+                    'roles'       => [ 'SuperAdmin' ],
+                    'permissions' => [ 'project_navigation_trees.read' ],
+                    'aliases'     => [ 'backend.project_navigations' ]
+                ],
+                400 => [ // <-- !!! replace 479 with your own sort position !!!
                     'slug'        => 'websites',
                     'name'        => 'backend/websites.websites',
                     'icon'        => 'fa fa-plus',

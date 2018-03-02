@@ -43,3 +43,15 @@ $factory->define(App\Models\Website::class, function (Faker\Generator $faker) {
         'updated_by' => factory(Motor\Backend\Models\User::class)->create()->id,
     ];
 });
+
+$factory->define(App\Models\ProjectNavigation::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word
+    ];
+});
+
+$factory->define(App\Models\ProjectNavigationTree::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->word
+    ];
+});

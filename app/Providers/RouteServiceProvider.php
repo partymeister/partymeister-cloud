@@ -38,6 +38,9 @@ class RouteServiceProvider extends ServiceProvider
         Route::bind('website', function($id){
             return \App\Models\Website::findOrFail($id);
         });
+        Route::bind('project_navigation', function($id){
+            return \App\Models\ProjectNavigation::findOrFail($id);
+        });
     }
 
 

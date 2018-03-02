@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Kalnoy\Nestedset\NodeTrait;
 use Motor\Backend\Models\Client;
 use Motor\Core\Traits\Searchable;
 use Motor\Core\Traits\Filterable;
@@ -10,17 +11,13 @@ use Culpa\Traits\Blameable;
 use Culpa\Traits\CreatedBy;
 use Culpa\Traits\DeletedBy;
 use Culpa\Traits\UpdatedBy;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
-use Spatie\MediaLibrary\Media;
 
-class App extends Model implements HasMediaConversions
+class ProjectNavigation extends Model
 {
 
-    use HasMediaTrait;
-    use Searchable;
     use Filterable;
     use Blameable, CreatedBy, UpdatedBy, DeletedBy;
+    use NodeTrait;
 
     /**
      * Columns for the Blameable trait
@@ -34,11 +31,7 @@ class App extends Model implements HasMediaConversions
      *
      * @var array
      */
-    protected $searchableColumns = [
-        'client.name',
-        'project.name',
-        'name',
-    ];
+    protected $searchableColumns = [];
 
     /**
      * The attributes that are mass assignable.
@@ -46,35 +39,38 @@ class App extends Model implements HasMediaConversions
      * @var array
      */
     protected $fillable = [
-        'name',
         'client_id',
         'project_id',
-        'deinetickets_api_url',
-        'deinetickets_api_token',
-        'onesignal_ios',
-        'onesignal_android',
-        'website_api_base_url',
-        'local_api_base_url',
-        'intro_text_1',
-        'intro_text_2',
-        'intro_text_3',
-        'intro_text_4',
-        'menu_type_url',
-        'menu_structure_url'
+        'scope',
+        'name',
+        'icon',
+        'url',
+        'page',
+        'function',
+        'is_protected',
+        'is_hidden_when_logged_in',
+        'is_visible_for_at_home'
     ];
 
-
-    public function registerMediaConversions(Media $media = null)
+    /**
+     * Get searchable columns defined on the model.
+     *
+     * @return array
+     */
+    public function getSearchableColumns()
     {
-        $this->addMediaConversion('thumb')->setManipulations([ 'w' => 400, 'h' => 400 ]);
-        $this->addMediaConversion('preview')->setManipulations([ 'w' => 400, 'h' => 400 ]);
+        return (property_exists($this, 'searchableColumns')) ? $this->searchableColumns : [];
+    }
+
+    protected function getScopeAttributes()
+    {
+        return [ 'scope' ];
     }
 
     public function client()
     {
         return $this->belongsTo(Client::class);
     }
-
 
     public function project()
     {

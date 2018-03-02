@@ -14,3 +14,13 @@ function create_test_website($count = 1)
 {
     return factory(App\Models\Website::class, $count)->create();
 }
+
+function create_test_project_navigation($count = 1)
+{
+    return factory(App\Models\ProjectNavigation::class, $count)->create();
+}
+
+function create_test_project_navigation_tree($count = 1)
+{
+    return factory(App\Models\ProjectNavigationTree::class, $count)->create();
+}

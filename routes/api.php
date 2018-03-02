@@ -17,3 +17,4 @@ Route::post('/tickets/{app}', 'Api\TicketsController@index');
 //Route::resource('projects', 'ProjectsController');
 //Route::resource('apps', 'AppsController');
 //Route::resource('websites', 'WebsitesController');
+//Route::resource('project_navigations', 'ProjectNavigationsController');
