@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Services\ProjectNavigationService;
+use App\Transformers\ProjectNavigationTransformer;
 use Motor\Backend\Http\Controllers\Controller;
 
-use App\Models\ProjectNavigationTree;
+use App\Models\ProjectNavigation;
 use App\Http\Requests\Backend\ProjectNavigationTreeRequest;
-use App\Services\ProjectNavigationTreeService;
-use App\Transformers\ProjectNavigationTreeTransformer;
 
 class ProjectNavigationTreesController extends Controller
 {
@@ -18,8 +18,8 @@ class ProjectNavigationTreesController extends Controller
      */
     public function index()
     {
-        $paginator = ProjectNavigationTreeService::collection()->getPaginator();
-        $resource = $this->transformPaginator($paginator, ProjectNavigationTreeTransformer::class);
+        $paginator = ProjectNavigationService::collection()->getPaginator();
+        $resource = $this->transformPaginator($paginator, ProjectNavigationTransformer::class);
 
         return $this->respondWithJson('ProjectNavigationTree collection read', $resource);
     }
@@ -33,8 +33,8 @@ class ProjectNavigationTreesController extends Controller
      */
     public function store(ProjectNavigationTreeRequest $request)
     {
-        $result = ProjectNavigationTreeService::create($request)->getResult();
-        $resource = $this->transformItem($result, ProjectNavigationTreeTransformer::class);
+        $result = ProjectNavigationService::create($request)->getResult();
+        $resource = $this->transformItem($result, ProjectNavigationTransformer::class);
 
         return $this->respondWithJson('ProjectNavigationTree created', $resource);
     }
@@ -47,10 +47,10 @@ class ProjectNavigationTreesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(ProjectNavigationTree $record)
+    public function show(ProjectNavigation $record)
     {
-        $result = ProjectNavigationTreeService::show($record)->getResult();
-        $resource = $this->transformItem($result, ProjectNavigationTreeTransformer::class);
+        $result = ProjectNavigationService::show($record)->getResult();
+        $resource = $this->transformCollection($result->children, ProjectNavigationTransformer::class);
 
         return $this->respondWithJson('ProjectNavigationTree read', $resource);
     }
@@ -64,10 +64,10 @@ class ProjectNavigationTreesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(ProjectNavigationTreeRequest $request, ProjectNavigationTree $record)
+    public function update(ProjectNavigationTreeRequest $request, ProjectNavigation $record)
     {
-        $result = ProjectNavigationTreeService::update($record, $request)->getResult();
-        $resource = $this->transformItem($result, ProjectNavigationTreeTransformer::class);
+        $result = ProjectNavigationService::update($record, $request)->getResult();
+        $resource = $this->transformItem($result, ProjectNavigationTransformer::class);
 
         return $this->respondWithJson('ProjectNavigationTree updated', $resource);
     }
@@ -80,9 +80,9 @@ class ProjectNavigationTreesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProjectNavigationTree $record)
+    public function destroy(ProjectNavigation $record)
     {
-        $result = ProjectNavigationTreeService::delete($record)->getResult();
+        $result = ProjectNavigationService::delete($record)->getResult();
 
         if ($result) {
             return $this->respondWithJson('ProjectNavigationTree deleted', ['success' => true]);

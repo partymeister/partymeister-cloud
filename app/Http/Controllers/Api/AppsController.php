@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use Illuminate\Support\Facades\Auth;
 use Motor\Backend\Http\Controllers\Controller;
 
 use App\Models\App;
@@ -49,6 +50,11 @@ class AppsController extends Controller
      */
     public function show(App $record)
     {
+        $project = Auth::guard('api')->user();
+        if ($project->id != $record->project_id) {
+            abort(403);
+        }
+
         $result = AppService::show($record)->getResult();
         $resource = $this->transformItem($result, AppTransformer::class);
 

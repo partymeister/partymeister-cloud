@@ -25,10 +25,10 @@ class AppForm extends Form
             ->add('website_api_base_url', 'text', ['label' => trans('backend/apps.website_api_base_url')])
             ->add('local_api_base_url', 'text', ['label' => trans('backend/apps.local_api_base_url')])
 
-            ->add('intro_text_1', 'htmleditor', ['label' => trans('backend/apps.intro_text_1')])
-            ->add('intro_text_2', 'htmleditor', ['label' => trans('backend/apps.intro_text_2')])
-            ->add('intro_text_3', 'htmleditor', ['label' => trans('backend/apps.intro_text_3')])
-            ->add('intro_text_4', 'htmleditor', ['label' => trans('backend/apps.intro_text_4')])
+            ->add('intro_text_1', 'htmleditor', ['label' => trans('backend/apps.intro_text_1'), 'format' => true])
+            ->add('intro_text_2', 'htmleditor', ['label' => trans('backend/apps.intro_text_2'), 'format' => true])
+            ->add('intro_text_3', 'htmleditor', ['label' => trans('backend/apps.intro_text_3'), 'format' => true])
+            ->add('intro_text_4', 'htmleditor', ['label' => trans('backend/apps.intro_text_4'), 'format' => true])
 
             //->add('menu_type_url', 'text', ['label' => trans('backend/apps.menu_type_url')])
             //->add('menu_structure_url', 'text', ['label' => trans('backend/apps.menu_structure_url')])

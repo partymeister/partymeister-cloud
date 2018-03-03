@@ -53,7 +53,10 @@ class ProjectNavigationService extends BaseService
 
         // If it exists, append the item AFTER the node, but only if it has been changed
         if ( ! is_null($node)) {
-            $formerPreviousSibling = $this->record->getPrevSibling();
+            $formerPreviousSibling = null;
+            if ($this->record->exists) {
+                $formerPreviousSibling = $this->record->getPrevSibling();
+            }
             if (( is_null($formerPreviousSibling) || ( ! is_null($formerPreviousSibling) && $formerPreviousSibling->id != $node->id ) )) {
                 $this->record->scope = $node->scope;
                 $this->record->afterNode($node);
@@ -66,7 +69,12 @@ class ProjectNavigationService extends BaseService
 
             // If it exists, append the item BEFORE the node, but only if it has been changed
             if ( ! is_null($node)) {
-                $formerNextSibling = $this->record->getNextSibling();
+
+                $formerNextSibling = null;
+                if ($this->record->exists) {
+                    $formerNextSibling = $this->record->getNextSibling();
+                }
+
                 if (( is_null($formerNextSibling) || ( ! is_null($formerNextSibling) && $formerNextSibling->id != $node->id ) )) {
                     $this->record->scope = $node->scope;
                     $this->record->beforeNode($node);

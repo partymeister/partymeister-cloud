@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\App;
 //use GrahamCampbell\Throttle\Facades\Throttle;
+use App\Models\Project;
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Http\Request;
 use Motor\Backend\Http\Controllers\Controller;
@@ -12,7 +13,7 @@ use GuzzleHttp\Client;
 class TicketsController extends Controller
 {
 
-    public function index(Request $request, App $app)
+    public function index(Request $request, Project $project, App $app)
     {
         //$throttler = Throttle::get($request, 10, 30);
 

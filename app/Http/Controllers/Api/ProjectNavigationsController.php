@@ -50,6 +50,8 @@ class ProjectNavigationsController extends Controller
     public function show(ProjectNavigation $record)
     {
         $result = ProjectNavigationService::show($record)->getResult();
+
+
         $resource = $this->transformItem($result, ProjectNavigationTransformer::class);
 
         return $this->respondWithJson('ProjectNavigation read', $resource);
