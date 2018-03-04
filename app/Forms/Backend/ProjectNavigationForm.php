@@ -9,7 +9,6 @@ class ProjectNavigationForm extends Form
 {
     public function buildForm()
     {
-        $clients = config('motor-backend.models.client')::pluck('name', 'id')->toArray();
         $this
             ->add('parent_id', 'hidden')
             ->add('previous_sibling_id', 'hidden')
@@ -19,6 +18,7 @@ class ProjectNavigationForm extends Form
             ->add('page', 'text', ['label' => trans('backend/project_navigations.page')])
             ->add('url', 'text', ['label' => trans('backend/project_navigations.url')])
             ->add('function', 'text', ['label' => trans('backend/project_navigations.function')])
+            ->add('is_default', 'checkbox', ['label' => trans('backend/project_navigations.is_default')])
             ->add('is_protected', 'checkbox', ['label' => trans('backend/project_navigations.is_protected')])
             ->add('is_hidden_when_logged_in', 'checkbox', ['label' => trans('backend/project_navigations.is_hidden_when_logged_in')])
             ->add('is_visible_for_at_home', 'checkbox', ['label' => trans('backend/project_navigations.is_visible_for_at_home')])

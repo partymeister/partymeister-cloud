@@ -48,6 +48,7 @@ class ProjectNavigation extends Model
         'page',
         'function',
         'is_protected',
+        'is_default',
         'is_hidden_when_logged_in',
         'is_visible_for_at_home'
     ];

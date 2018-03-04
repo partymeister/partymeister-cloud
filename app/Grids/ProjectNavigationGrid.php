@@ -12,6 +12,7 @@ class ProjectNavigationGrid extends Grid
     protected function setup()
     {
         $this->addColumn('name', trans('motor-cms::backend/navigations.name'))->renderer(TreeRenderer::class);
+        $this->addColumn('is_default', trans('backend/project_navigations.is_default'))->renderer(BooleanRenderer::class);
         $this->addColumn('is_protected', trans('backend/project_navigations.is_protected'))->renderer(BooleanRenderer::class);
         $this->addColumn('is_hidden_when_logged_in', trans('backend/project_navigations.is_hidden_when_logged_in'))->renderer(BooleanRenderer::class);
         $this->addColumn('is_visible_for_at_home', trans('backend/project_navigations.is_visible_for_at_home'))->renderer(BooleanRenderer::class);

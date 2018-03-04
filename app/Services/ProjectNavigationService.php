@@ -36,13 +36,27 @@ class ProjectNavigationService extends BaseService
 
     public function afterCreate()
     {
-        //$this->assembleSlugs();
+        $this->checkDefaultPage();
     }
 
 
     public function afterUpdate()
     {
-        //$this->assembleSlugs();
+        $this->checkDefaultPage();
+    }
+
+
+    protected function checkDefaultPage()
+    {
+        if ($this->record->is_default) {
+            // Unset default page flag on all other items on the tree
+            foreach(ProjectNavigation::where('scope', $this->record->scope)->get() as $item) {
+                if ($item->is_default && $item->id != $this->record->id) {
+                    $item->is_default = false;
+                    $item->save();
+                }
+            }
+        }
     }
 
 

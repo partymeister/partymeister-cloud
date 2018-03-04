@@ -16,6 +16,7 @@ return [
     'url'                      => 'URL',
     'function'                 => 'Call function',
     'is_protected'             => 'Is protected',
+    'is_default'               => 'Is default navigation item',
     'is_hidden_when_logged_in' => 'Is hidden when user is logged in',
     'is_visible_for_at_home'   => 'Is visible for @home ticket owners',
     'items_for'                => 'Navigation items for: :name',
