@@ -2517,16 +2517,16 @@
         },
         {
             "name": "motor-cms/motor-backend",
-            "version": "0.4.2",
+            "version": "0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/motor-cms/motor-backend.git",
-                "reference": "95f734f66dfa9396694a2b7f0ea37e4e0b2ecd2d"
+                "reference": "7fdc02d892952ac9763cc2fe68723b3535f44b5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/motor-cms/motor-backend/zipball/95f734f66dfa9396694a2b7f0ea37e4e0b2ecd2d",
-                "reference": "95f734f66dfa9396694a2b7f0ea37e4e0b2ecd2d",
+                "url": "https://api.github.com/repos/motor-cms/motor-backend/zipball/7fdc02d892952ac9763cc2fe68723b3535f44b5e",
+                "reference": "7fdc02d892952ac9763cc2fe68723b3535f44b5e",
                 "shasum": ""
             },
             "require": {
@@ -2600,7 +2600,7 @@
             "keywords": [
                 "motor"
             ],
-            "time": "2018-02-28T10:48:07+00:00"
+            "time": "2018-03-09T23:51:07+00:00"
         },
         {
             "name": "motor-cms/motor-cms",
