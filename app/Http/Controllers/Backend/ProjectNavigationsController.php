@@ -31,6 +31,7 @@ class ProjectNavigationsController extends Controller
         $service = ProjectNavigationService::collection($grid);
 
         $filter = $service->getFilter();
+        $filter->add(new WhereRenderer('project_id'))->setValue($record->project_id);
         $filter->add(new WhereRenderer('scope'))->setValue($record->scope);
         $filter->add(new WhereRenderer('parent_id'))->setOperator('!=')->setAllowNull(true)->setValue(null);
 
