@@ -56,7 +56,7 @@ class ProjectNavigationsController extends Controller
             'enctype' => 'multipart/form-data'
         ]);
 
-        $trees = ProjectNavigation::where('scope', $root->scope)->defaultOrder()->get()->toTree();
+        $trees = ProjectNavigation::where('project_id', $root->project_id)->where('scope', $root->scope)->defaultOrder()->get()->toTree();
         $newItem = true;
         $selectedItem = null;
 
