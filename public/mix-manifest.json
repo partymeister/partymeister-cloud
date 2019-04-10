@@ -1,14 +1,4 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
-    "/css/all.css": "/css/all.css",
-    "/css/all-pos.css": "/css/all-pos.css",
-    "/css/jquery.minicolors.png": "/css/jquery.minicolors.png",
-    "/js/medium-editor.min.js": "/js/medium-editor.min.js",
-    "/fonts/Simple-Line-Icons.eot": "/fonts/Simple-Line-Icons.eot",
-    "/fonts/Simple-Line-Icons.svg": "/fonts/Simple-Line-Icons.svg",
-    "/fonts/Simple-Line-Icons.ttf": "/fonts/Simple-Line-Icons.ttf",
-    "/fonts/Simple-Line-Icons.woff": "/fonts/Simple-Line-Icons.woff",
-    "/fonts/Simple-Line-Icons.woff2": "/fonts/Simple-Line-Icons.woff2",
-    "/js/moment-with-locales.min.js": "/js/moment-with-locales.min.js"
+    "/js/motor-backend.js": "/js/motor-backend.js",
+    "/css/motor-backend.css": "/css/motor-backend.css"
 }
