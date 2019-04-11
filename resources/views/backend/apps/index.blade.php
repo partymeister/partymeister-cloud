@@ -7,7 +7,7 @@
 @section('contentheader_title')
     {{ trans('backend/apps.apps') }}
     @if (has_permission('apps.write'))
-	    {!! link_to_route('backend.apps.create', trans('backend/apps.new'), [], ['class' => 'pull-right btn btn-sm btn-success']) !!}
+	    {!! link_to_route('backend.apps.create', trans('backend/apps.new'), [], ['class' => 'pull-right float-right btn btn-sm btn-success']) !!}
     @endif
 @endsection
 

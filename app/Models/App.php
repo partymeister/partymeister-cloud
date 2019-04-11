@@ -10,11 +10,12 @@ use Culpa\Traits\Blameable;
 use Culpa\Traits\CreatedBy;
 use Culpa\Traits\DeletedBy;
 use Culpa\Traits\UpdatedBy;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
-use Spatie\MediaLibrary\Media;
 
-class App extends Model implements HasMediaConversions
+use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+
+class App extends Model implements HasMedia
 {
 
     use HasMediaTrait;
@@ -66,8 +67,8 @@ class App extends Model implements HasMediaConversions
 
     public function registerMediaConversions(Media $media = null)
     {
-        $this->addMediaConversion('thumb')->setManipulations([ 'w' => 400, 'h' => 400 ]);
-        $this->addMediaConversion('preview')->setManipulations([ 'w' => 400, 'h' => 400 ]);
+        $this->addMediaConversion('thumb')->width(400)->height(400)->nonQueued();
+        $this->addMediaConversion('preview')->width(400)->height(400)->format('png')->nonQueued();
     }
 
     public function client()

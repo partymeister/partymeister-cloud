@@ -7,9 +7,9 @@
 @section('contentheader_title')
     {{ trans('backend/project_navigations.items_for', ['name' => $record->name]) }}
     @if (has_permission('project_navigations.write'))
-	    {!! link_to_route('backend.project_navigations.create', trans('backend/project_navigations.new'), ['project_navigation' => $record->id], ['class' => 'pull-right btn btn-sm btn-success']) !!}
+	    {!! link_to_route('backend.project_navigations.create', trans('backend/project_navigations.new'), ['project_navigation' => $record->id], ['class' => 'pull-right float-right btn btn-sm btn-success']) !!}
     @endif
-    {!! link_to_route('backend.project_navigation_trees.index', trans('motor-backend::backend/global.back'), [], ['class' => 'pull-right btn btn-sm btn-danger']) !!}
+    {!! link_to_route('backend.project_navigation_trees.index', trans('motor-backend::backend/global.back'), [], ['class' => 'pull-right float-right btn btn-sm btn-danger']) !!}
 @endsection
 
 @section('main-content')

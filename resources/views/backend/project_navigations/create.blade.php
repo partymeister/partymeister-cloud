@@ -6,7 +6,7 @@
 
 @section('contentheader_title')
     {{ trans('backend/project_navigations.new') }}
-    {!! link_to_route('backend.project_navigations.index', trans('motor-backend::backend/global.back'), ['project_navigation' => $root->id], ['class' => 'pull-right btn btn-sm btn-danger']) !!}
+    {!! link_to_route('backend.project_navigations.index', trans('motor-backend::backend/global.back'), ['project_navigation' => $root->id], ['class' => 'pull-right float-right btn btn-sm btn-danger']) !!}
 @endsection
 
 @section('main-content')

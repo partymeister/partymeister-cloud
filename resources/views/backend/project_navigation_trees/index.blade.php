@@ -7,7 +7,7 @@
 @section('contentheader_title')
     {{ trans('backend/project_navigation_trees.project_navigation_trees') }}
     @if (has_permission('project_navigation_trees.write'))
-        {!! link_to_route('backend.project_navigation_trees.create', trans('backend/project_navigation_trees.new'), [], ['class' => 'pull-right btn btn-sm btn-success']) !!}
+        {!! link_to_route('backend.project_navigation_trees.create', trans('backend/project_navigation_trees.new'), [], ['class' => 'pull-right float-right btn btn-sm btn-success']) !!}
     @endif
 @endsection
 
