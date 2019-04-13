@@ -60,7 +60,7 @@ class AppTransformer extends Fractal\TransformerAbstract
     public function includeRemoteNavigation(App $record)
     {
         $remoteNavigation = ProjectNavigation::where('project_id', $record->project_id)->where('scope',
-            'remote_navigation')->where('_lft', 1)->first();
+            'remote_navigation')->where('parent_id', null)->first();
 
         if ( ! is_null($remoteNavigation)) {
             return $this->collection($remoteNavigation->children, new ProjectNavigationTransformer());
@@ -76,7 +76,7 @@ class AppTransformer extends Fractal\TransformerAbstract
     public function includeLocalNavigation(App $record)
     {
         $localNavigation = ProjectNavigation::where('project_id', $record->project_id)->where('scope',
-            'local_navigation')->where('_lft', 1)->first();
+            'local_navigation')->where('parent_id', null)->first();
 
         if ( ! is_null($localNavigation)) {
             return $this->collection($localNavigation->children, new ProjectNavigationTransformer());

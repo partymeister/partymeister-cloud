@@ -94,15 +94,15 @@ class ProjectNavigationTreesController extends Controller
             'client_id'                => $tree[0]->client_id,
             'project_id'               => 2,
             'icon'                     => $tree[0]->icon,
-            'url'                      => $tree[0]->url,
-            'page'                     => str_replace('2018', '2019', $tree[0]->page),
+            'url'                      => str_replace('2018', '2019', $tree[0]->url),
+            'page'                     => $tree[0]->page,
             'function'                 => $tree[0]->function,
             'is_protected'             => $tree[0]->is_protected,
             'is_default'               => $tree[0]->is_default,
             'is_hidden_when_logged_in' => $tree[0]->is_hidden_when_logged_in,
             'is_visible_for_at_home'   => $tree[0]->is_visible_for_at_home,
-            'scope'                    => "test",
-            'children'                 => []
+            'scope'                    => $tree[0]->scope,
+            'children'                 => [],
         ];
         $cleanedTree['children'] = $this->recurseTree($tree[0]->children, $cleanedTree['children']);
         $newTree                 = ProjectNavigation::create($cleanedTree);
@@ -118,14 +118,14 @@ class ProjectNavigationTreesController extends Controller
                 'client_id'                => $node->client_id,
                 'project_id'               => 2,
                 'icon'                     => $node->icon,
-                'url'                      => $node->url,
-                'page'                     => str_replace('2018', '2019', $node->page),
+                'url'                      => str_replace('2018', '2019', $node->url),
+                'page'                     => $node->page,
                 'function'                 => $node->function,
                 'is_protected'             => $node->is_protected,
                 'is_default'               => $node->is_default,
                 'is_hidden_when_logged_in' => $node->is_hidden_when_logged_in,
                 'is_visible_for_at_home'   => $node->is_visible_for_at_home,
-                'scope'                    => "test",
+                'scope'                    => $node->scope,
                 'children'                 => $this->recurseTree($node->children, [])
             ];
         }
