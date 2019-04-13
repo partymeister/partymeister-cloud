@@ -61,7 +61,7 @@ class ProjectNavigationTreesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      *
      * @return \Illuminate\Http\Response
      */
@@ -87,19 +87,15 @@ class ProjectNavigationTreesController extends Controller
      */
     public function duplicate(ProjectNavigation $record)
     {
-        $tree = ProjectNavigation::where('project_id', $record->project_id)
-                                 ->where('scope', $record->scope)
-                                 ->defaultOrder()
-                                 ->get()
-                                 ->toTree();
+        $tree = ProjectNavigation::where('project_id', $record->project_id)->where('scope', $record->scope)->defaultOrder()->get()->toTree();
 
-        $cleanedTree = [
-            'name'                     => 'DUPLICATE OF '.$tree[0]->name,
+        $cleanedTree             = [
+            'name'                     => 'DUPLICATE OF ' . $tree[0]->name,
             'client_id'                => $tree[0]->client_id,
-            'project_id'               => $tree[0]->project_id,
+            'project_id'               => 2,
             'icon'                     => $tree[0]->icon,
             'url'                      => $tree[0]->url,
-            'page'                     => $tree[0]->page,
+            'page'                     => str_replace('2018', '2019', $tree[0]->page),
             'function'                 => $tree[0]->function,
             'is_protected'             => $tree[0]->is_protected,
             'is_default'               => $tree[0]->is_default,
@@ -109,7 +105,7 @@ class ProjectNavigationTreesController extends Controller
             'children'                 => []
         ];
         $cleanedTree['children'] = $this->recurseTree($tree, $cleanedTree['children']);
-        $newTree = ProjectNavigation::create($cleanedTree);
+        $newTree                 = ProjectNavigation::create($cleanedTree);
         dd($newTree);
     }
 
@@ -120,10 +116,10 @@ class ProjectNavigationTreesController extends Controller
             $tree[] = [
                 'name'                     => $node->name,
                 'client_id'                => $node->client_id,
-                'project_id'               => $node->project_id,
+                'project_id'               => 2,
                 'icon'                     => $node->icon,
                 'url'                      => $node->url,
-                'page'                     => $node->page,
+                'page'                     => str_replace('2018', '2019', $node->page),
                 'function'                 => $node->function,
                 'is_protected'             => $node->is_protected,
                 'is_default'               => $node->is_default,
@@ -141,7 +137,7 @@ class ProjectNavigationTreesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
@@ -154,7 +150,7 @@ class ProjectNavigationTreesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
@@ -162,7 +158,7 @@ class ProjectNavigationTreesController extends Controller
     {
         $form = $this->form(ProjectNavigationTreeForm::class, [
             'method'  => 'PATCH',
-            'url'     => route('backend.project_navigation_trees.update', [ $record->id ]),
+            'url'     => route('backend.project_navigation_trees.update', [$record->id]),
             'enctype' => 'multipart/form-data',
             'model'   => $record
         ]);
@@ -174,8 +170,8 @@ class ProjectNavigationTreesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
+     * @param \Illuminate\Http\Request $request
+     * @param int                      $id
      *
      * @return \Illuminate\Http\Response
      */
@@ -199,7 +195,7 @@ class ProjectNavigationTreesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
