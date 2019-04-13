@@ -14,6 +14,7 @@ class ProjectNavigationTreeGrid extends Grid
         $this->addColumn('project.name', trans('backend/projects.project'));
         $this->addAction(trans('backend/project_navigation_trees.show_nodes'), 'backend.project_navigations.index', ['class' => 'btn-primary']);
         $this->addEditAction(trans('motor-backend::backend/global.edit'), 'backend.project_navigation_trees.edit')->onCondition('parent_id', null);
+        $this->addDuplicateAction(trans('motor-backend::backend/global.duplicate'), 'backend.project_navigation_trees.duplicate')->needsPermissionTo('project_navigation_trees.write');
         $this->addDeleteAction(trans('motor-backend::backend/global.delete'), 'backend.project_navigation_trees.destroy')->onCondition('parent_id', null);
     }
 }

@@ -15,7 +15,9 @@ use Motor\Core\Filter\Renderers\WhereRenderer;
 
 class ProjectNavigationTreesController extends Controller
 {
+
     use FormBuilderTrait;
+
 
     /**
      * Display a listing of the resource.
@@ -33,7 +35,7 @@ class ProjectNavigationTreesController extends Controller
 
         $grid->filter = $filter;
 
-        $paginator    = $service->getPaginator();
+        $paginator = $service->getPaginator();
 
         return view('backend.project_navigation_trees.index', compact('paginator', 'grid'));
     }
@@ -77,6 +79,62 @@ class ProjectNavigationTreesController extends Controller
         flash()->success(trans('backend/project_navigation_trees.created'));
 
         return redirect('backend/project_navigation_trees');
+    }
+
+
+    /**
+     * @param ProjectNavigation $record
+     */
+    public function duplicate(ProjectNavigation $record)
+    {
+        $tree = ProjectNavigation::where('project_id', $record->project_id)
+                                 ->where('scope', $record->scope)
+                                 ->defaultOrder()
+                                 ->get()
+                                 ->toTree();
+
+        $cleanedTree = [
+            'name'                     => 'DUPLICATE OF '.$tree[0]->name,
+            'client_id'                => $tree[0]->client_id,
+            'project_id'               => $tree[0]->project_id,
+            'icon'                     => $tree[0]->icon,
+            'url'                      => $tree[0]->url,
+            'page'                     => $tree[0]->page,
+            'function'                 => $tree[0]->function,
+            'is_protected'             => $tree[0]->is_protected,
+            'is_default'               => $tree[0]->is_default,
+            'is_hidden_when_logged_in' => $tree[0]->is_hidden_when_logged_in,
+            'is_visible_for_at_home'   => $tree[0]->is_visible_for_at_home,
+            'scope'                    => $tree[0]->scope,
+            'children'                 => []
+        ];
+        $cleanedTree['children'] = $this->recurseTree($tree, $cleanedTree['children']);
+        $newTree = ProjectNavigation::create($cleanedTree);
+        dd($newTree);
+    }
+
+
+    protected function recurseTree($nodes, $tree = [])
+    {
+        foreach ($nodes as $node) {
+            $tree[] = [
+                'name'                     => $node->name,
+                'client_id'                => $node->client_id,
+                'project_id'               => $node->project_id,
+                'icon'                     => $node->icon,
+                'url'                      => $node->url,
+                'page'                     => $node->page,
+                'function'                 => $node->function,
+                'is_protected'             => $node->is_protected,
+                'is_default'               => $node->is_default,
+                'is_hidden_when_logged_in' => $node->is_hidden_when_logged_in,
+                'is_visible_for_at_home'   => $node->is_visible_for_at_home,
+                'scope'                    => $node->scope,
+                'children'                 => $this->recurseTree($node->children, [])
+            ];
+        }
+
+        return $tree;
     }
 
 
