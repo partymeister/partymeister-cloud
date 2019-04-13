@@ -102,7 +102,8 @@ class ProjectNavigationTreesController extends Controller
             'is_hidden_when_logged_in' => $tree[0]->is_hidden_when_logged_in,
             'is_visible_for_at_home'   => $tree[0]->is_visible_for_at_home,
             'scope'                    => $tree[0]->scope,
-            'children'                 => []
+            'children'                 => [],
+            '_lft'                     => 1
         ];
         $cleanedTree['children'] = $this->recurseTree($tree, $cleanedTree['children']);
         $newTree                 = ProjectNavigation::create($cleanedTree);
