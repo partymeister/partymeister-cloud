@@ -49,6 +49,7 @@ class TicketsController extends Controller
                 }
             }
         } catch (RequestException $e) {
+            var_dump($e->getMessage());
             var_dump($e->getRequest());
             if ($e->hasResponse()) {
                 var_dump($e->getResponse());
