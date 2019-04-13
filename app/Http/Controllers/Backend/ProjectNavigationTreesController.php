@@ -104,7 +104,7 @@ class ProjectNavigationTreesController extends Controller
             'scope'                    => "test",
             'children'                 => []
         ];
-        $cleanedTree['children'] = $this->recurseTree($tree, $cleanedTree['children']);
+        $cleanedTree['children'] = $this->recurseTree($tree[0]->children, $cleanedTree['children']);
         $newTree                 = ProjectNavigation::create($cleanedTree);
         dd($newTree);
     }
