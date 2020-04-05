@@ -14,7 +14,7 @@ class AddDefaultPageToProjectNavigations extends Migration
     public function up()
     {
         Schema::table('project_navigations', function (Blueprint $table) {
-            $table->boolean('is_default')->after('is_protected');
+            //$table->boolean('is_default')->after('is_protected');
         });
     }
 
@@ -27,7 +27,7 @@ class AddDefaultPageToProjectNavigations extends Migration
     public function down()
     {
         Schema::table('project_navigations', function (Blueprint $table) {
-            $table->dropColumn('is_default');
+            //$table->dropColumn('is_default');
         });
     }
 }
