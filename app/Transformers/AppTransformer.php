@@ -79,7 +79,7 @@ class AppTransformer extends Fractal\TransformerAbstract
             'local_navigation')->where('parent_id', null)->first();
 
         if ( ! is_null($localNavigation)) {
-            return $this->collection($localNavigation->children()->orderBy('_lft'), new ProjectNavigationTransformer());
+            return $this->collection($localNavigation->children()->orderBy('_lft')->get(), new ProjectNavigationTransformer());
         }
     }
 }
