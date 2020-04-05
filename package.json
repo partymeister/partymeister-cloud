@@ -30,7 +30,7 @@
     "jquery-ui-dist": "^1.12.1",
     "jstree": "^3.3.7",
     "laravel-mix": "^4.0.14",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "mediaelement": "^4.2.9",
     "medium-editor": "^5.23.3",
     "metismenu": "^2.7.9",
