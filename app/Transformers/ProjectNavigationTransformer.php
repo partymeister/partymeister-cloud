@@ -37,7 +37,7 @@ class ProjectNavigationTransformer extends Fractal\TransformerAbstract
             'is_visible_for_at_home'   => (bool) $record->is_visible_for_at_home,
             'items'                    => []
         ];
-        foreach ($record->children as $child) {
+        foreach ($record->children()->orderBy('_lft')->get() as $child) {
             $data['items'][] = $this->transform($child);
         }
 

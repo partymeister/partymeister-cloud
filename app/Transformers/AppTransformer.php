@@ -76,7 +76,7 @@ class AppTransformer extends Fractal\TransformerAbstract
     public function includeLocalNavigation(App $record)
     {
         $localNavigation = ProjectNavigation::where('project_id', $record->project_id)->where('scope',
-            'local_navigation')->where('parent_id', null)->orderBy('_lft')->first();
+            'local_navigation')->where('parent_id', null)->first();
 
         if ( ! is_null($localNavigation)) {
             return $this->collection($localNavigation->children, new ProjectNavigationTransformer());
