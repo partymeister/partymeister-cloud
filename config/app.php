@@ -186,6 +186,9 @@ return [
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
         Fideloper\Proxy\TrustedProxyServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
+
+        Motor\CMS\Providers\MotorServiceProvider::class,
+
     ],
 
     /*
