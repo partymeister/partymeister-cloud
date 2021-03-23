@@ -182,7 +182,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        Dimsav\Translatable\TranslatableServiceProvider::class,
+        //Dimsav\Translatable\TranslatableServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
         Culpa\CulpaServiceProvider::class,
         Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
