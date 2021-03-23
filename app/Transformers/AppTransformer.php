@@ -3,6 +3,7 @@
 namespace App\Transformers;
 
 use App\Models\ProjectNavigation;
+use Illuminate\Support\Str;
 use League\Fractal;
 use App\Models\App;
 use Motor\Backend\Helpers\MediaHelper;
@@ -31,7 +32,7 @@ class AppTransformer extends Fractal\TransformerAbstract
     {
         return [
             'name'                 => $record->name,
-            'name_slug'            => str_slug($record->name),
+            'name_slug'            => Str::slug($record->name),
             'onesignal_ios'        => $record->onesignal_ios,
             'onesignal_android'    => $record->onesignal_android,
             'website_api_base_url' => $record->website_api_base_url,

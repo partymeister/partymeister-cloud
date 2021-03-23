@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\Project;
+use Illuminate\Support\Str;
 use Motor\Backend\Services\BaseService;
 
 class ProjectService extends BaseService
@@ -19,6 +20,6 @@ class ProjectService extends BaseService
 
     public function beforeCreate()
     {
-        $this->record->api_token = str_random(60);
+        $this->record->api_token = Str::random(60);
     }
 }
