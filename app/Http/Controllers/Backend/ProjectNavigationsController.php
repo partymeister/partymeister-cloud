@@ -35,7 +35,7 @@ class ProjectNavigationsController extends Controller
         $filter->add(new WhereRenderer('scope'))->setValue($record->scope);
         $filter->add(new WhereRenderer('parent_id'))->setOperator('!=')->setAllowNull(true)->setValue(null);
 
-        $grid->filter = $filter;
+        $grid->setFilter($service->getFilter());
 
         $paginator    = $service->getPaginator();
 

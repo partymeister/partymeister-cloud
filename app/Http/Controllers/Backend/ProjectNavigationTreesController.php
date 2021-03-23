@@ -33,7 +33,7 @@ class ProjectNavigationTreesController extends Controller
         $filter = $service->getFilter();
         $filter->add(new WhereRenderer('parent_id'))->setDefaultValue(null)->setAllowNull(true);
 
-        $grid->filter = $filter;
+        $grid->setFilter($service->getFilter());
 
         $paginator = $service->getPaginator();
 

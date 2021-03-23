@@ -19,14 +19,14 @@ class ProjectsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
         $grid = new ProjectGrid(Project::class);
 
         $service = ProjectService::collection($grid);
-        $grid->filter = $service->getFilter();
+        $grid->setFilter($service->getFilter());
         $paginator    = $service->getPaginator();
 
         return view('backend.projects.index', compact('paginator', 'grid'));
@@ -36,7 +36,7 @@ class ProjectsController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
@@ -53,9 +53,8 @@ class ProjectsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
+     * @param  ProjectRequest  $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(ProjectRequest $request)
     {
@@ -77,9 +76,7 @@ class ProjectsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param $id
      */
     public function show($id)
     {
@@ -90,9 +87,8 @@ class ProjectsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param  Project  $record
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(Project $record)
     {
@@ -110,10 +106,9 @@ class ProjectsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param  ProjectRequest  $request
+     * @param  Project  $record
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(ProjectRequest $request, Project $record)
     {
@@ -135,9 +130,8 @@ class ProjectsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param  Project  $record
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy(Project $record)
     {

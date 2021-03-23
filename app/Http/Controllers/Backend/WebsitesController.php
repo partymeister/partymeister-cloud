@@ -26,7 +26,7 @@ class WebsitesController extends Controller
         $grid = new WebsiteGrid(Website::class);
 
         $service = WebsiteService::collection($grid);
-        $grid->filter = $service->getFilter();
+        $grid->setFilter($service->getFilter());
         $paginator    = $service->getPaginator();
 
         return view('backend.websites.index', compact('paginator', 'grid'));

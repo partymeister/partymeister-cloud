@@ -26,7 +26,7 @@ class AppsController extends Controller
         $grid = new AppGrid(App::class);
 
         $service = AppService::collection($grid);
-        $grid->filter = $service->getFilter();
+        $grid->setFilter($service->getFilter());
         $paginator    = $service->getPaginator();
 
         return view('backend.apps.index', compact('paginator', 'grid'));
