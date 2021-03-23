@@ -137,9 +137,6 @@ return [
 
     'providers' => [
 
-        /*
-         * Laravel Framework Service Providers...
-         */
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
@@ -159,9 +156,11 @@ return [
         Illuminate\Redis\RedisServiceProvider::class,
         Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
-        Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+
+        Motor\Backend\Providers\TranslationServiceProvider::class,
+
         /*
          * Package Service Providers...
          */
@@ -173,29 +172,20 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Motor\Backend\Providers\MotorServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        //Dimsav\Translatable\TranslatableServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
         Culpa\CulpaServiceProvider::class,
         Kris\LaravelFormBuilder\FormBuilderServiceProvider::class,
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
-        //Barryvdh\Cors\ServiceProvider::class,
         Fideloper\Proxy\TrustedProxyServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
-        Motor\Core\Providers\MotorServiceProvider::class,
-        Motor\Backend\Providers\MotorServiceProvider::class,
-        Motor\CMS\Providers\MotorServiceProvider::class,
-
-        //GrahamCampbell\Throttle\ThrottleServiceProvider::class,
-
     ],
 
     /*
@@ -210,7 +200,6 @@ return [
     */
 
     'aliases' => [
-
         'App'          => Illuminate\Support\Facades\App::class,
         'Artisan'      => Illuminate\Support\Facades\Artisan::class,
         'Auth'         => Illuminate\Support\Facades\Auth::class,
@@ -251,6 +240,7 @@ return [
         'Image'       => Intervention\Image\Facades\Image::class,
         'Menu'        => Lavary\Menu\Facade::class,
         'FormBuilder' => Kris\LaravelFormBuilder\Facades\FormBuilder::class,
+
 
         //'Throttle' => GrahamCampbell\Throttle\Facades\Throttle::class
     ],
