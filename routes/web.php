@@ -33,5 +33,6 @@ Route::group([
         ]);
         Route::get('project_navigation_trees/{project_navigation}/duplicate',
             'ProjectNavigationTreesController@duplicate')->name('project_navigation_trees.duplicate');
-    }
+
+    });
 });
