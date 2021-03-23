@@ -1,5 +1,6 @@
 {
     "/js/motor-backend.js": "/js/motor-backend.js",
     "/css/motor-backend.css": "/css/motor-backend.css",
-    "/js/motor-backend.js.map": "/js/motor-backend.js.map"
+    "/js/motor-backend.js.map": "/js/motor-backend.js.map",
+    "/css/motor-backend.css.map": "/css/motor-backend.css.map"
 }
