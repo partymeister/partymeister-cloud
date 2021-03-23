@@ -9,7 +9,8 @@
     "require": {
         "php": ">=7.1.3",
         "motor-cms/motor-backend": "^1.0",
-        "motor-cms/motor-cms": "^1.0"
+        "motor-cms/motor-cms": "^1.0",
+        "lavary/laravel-menu": "1.8.1"
     },
     "autoload": {
         "classmap": [
