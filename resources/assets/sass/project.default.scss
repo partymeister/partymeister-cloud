@@ -1,14 +1,6 @@
 // Variables
 @import "variables";
 
-@function max($numbers...) {
-  @return m#{a}x(#{$numbers})
-}
-
-@function min($numbers...) {
-  @return m#{i}n(#{$numbers})
-}
-
 // Motor-Backend
 @import '~motor-backend/resources/assets/sass/motor-backend';
 

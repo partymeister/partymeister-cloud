@@ -1,5 +1,18 @@
 const mix = require('laravel-mix');
 
+mix.options({
+    hmrOptions: {
+        host: 'localhost',
+        port: '8079'
+    },
+});
+
+mix.webpackConfig({
+    devServer: {
+        port: '8079'
+    },
+});
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -17,8 +30,9 @@ mix.webpackConfig({
             'node_modules',
             'vendor/tightenco',
             'vendor/motor-cms',
+            'vendor/partymeister',
             'resources/assets/js',
-            'packages/dfox288'
+            'packages'
         ],
         extensions: [".webpack.js", ".web.js", ".js", ".json", ".less"]
     }
@@ -27,10 +41,7 @@ mix.webpackConfig({
 mix
     .js('resources/assets/js/project.default.js', 'public/js/motor-backend.js')
     .sourceMaps()
-    .sass('resources/assets/sass/project.scss', 'public/css/motor-backend.css')
-    // APP RESOURCES
-    .copy('resources/fonts/*.*', 'public/fonts')
-    .copy('resources/assets/images/*.*', 'public/images')
+    .sass('resources/assets/sass/project.default.scss', 'public/css/motor-backend.css')
 ;
 if (mix.config.inProduction) {
     mix.version();
