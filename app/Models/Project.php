@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Motor\Backend\Models\Client;
 use Motor\Core\Traits\Searchable;
@@ -17,6 +18,7 @@ class Project extends Model
     use Searchable;
     use Filterable;
     use Blameable, CreatedBy, UpdatedBy, DeletedBy;
+    use Authenticatable;
 
     /**
      * Columns for the Blameable trait

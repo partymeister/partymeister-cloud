@@ -15,7 +15,7 @@ class AppsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
@@ -28,9 +28,8 @@ class AppsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
+     * @param  AppRequest  $request
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(AppRequest $request)
     {
@@ -44,9 +43,8 @@ class AppsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param  App  $record
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(App $record)
     {
@@ -65,10 +63,9 @@ class AppsController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
-     *
-     * @return \Illuminate\Http\Response
+     * @param  AppRequest  $request
+     * @param  App  $record
+     * @return \Illuminate\Http\JsonResponse
      */
     public function update(AppRequest $request, App $record)
     {
