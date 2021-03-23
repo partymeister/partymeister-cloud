@@ -3,14 +3,16 @@
 namespace App\Exceptions;
 
 use Exception;
+use HttpException;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Illuminate\Http\Request;
-use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
+
     /**
      * A list of the exception types that should not be reported.
      *
@@ -25,38 +27,39 @@ class Handler extends ExceptionHandler
         \Illuminate\Validation\ValidationException::class,
     ];
 
+
     /**
      * Report or log an exception.
      *
      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
-     * @param  \Exception  $exception
-     * @return void
+     * @param Throwable $exception
+     * @throws Exception
      */
-    public function report(Exception $exception)
+    public function report(Throwable $exception)
     {
         parent::report($exception);
     }
 
+
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $exception
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param Throwable $exception
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response|\Symfony\Component\HttpFoundation\Response
+     * @throws Throwable
      */
-    public function render($request, Exception $exception)
+    public function render($request, Throwable $exception)
     {
         if ($exception instanceof HttpException) {
-            if (!$request->acceptsHtml())
-            {
-                return response()->json(['error' => 'Access denied.'], 403);            }
+            if ( ! $request->acceptsHtml()) {
+                return response()->json([ 'error' => 'Access denied.' ], 403);
+            }
         }
 
-        if ($exception instanceof ModelNotFoundException)
-        {
-            if (!$request->acceptsHtml())
-            {
+        if ($exception instanceof ModelNotFoundException) {
+            if ( ! $request->acceptsHtml()) {
                 return response()->json([
                     'message' => 'Record not found',
                 ], 404);
@@ -66,36 +69,50 @@ class Handler extends ExceptionHandler
         return parent::render($request, $exception);
     }
 
+
     /**
      * Convert an authentication exception into an unauthenticated response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Auth\AuthenticationException  $exception
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param AuthenticationException $exception
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     protected function unauthenticated($request, AuthenticationException $exception)
     {
         if ($request->expectsJson()) {
-            return response()->json(['error' => 'Unauthenticated.'], 401);
+            return response()->json([ 'error' => 'Unauthenticated.' ], 401);
         }
 
         return redirect()->guest('login');
     }
 
+
     /**
      * Render the given HttpException.
      *
-     * @param  \Symfony\Component\HttpKernel\Exception\HttpException  $e
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @param HttpExceptionInterface $exception
+     *
+     * @return \Illuminate\Http\Response|\Symfony\Component\HttpFoundation\Response
      */
-    protected function renderHttpException(\Symfony\Component\HttpKernel\Exception\HttpException $e)
+    protected function renderHttpException(HttpExceptionInterface $exception)
     {
-        $status = $e->getStatusCode();
+        $status = $exception->getStatusCode();
 
-        if (view()->exists("motor-backend::errors.{$status}")) {
-            return response()->view("motor-backend::errors.{$status}", ['exception' => $e], $status, $e->getHeaders());
+        if (strpos(app()->request->getPathInfo(), '/backend') !== false) {
+            if (view()->exists("motor-backend::errors.{$status}")) {
+                return response()->view("motor-backend::errors.{$status}", [ 'exception' => $exception ], $status,
+                    $exception->getHeaders());
+            } else {
+                return $this->convertExceptionToResponse($exception);
+            }
         } else {
-            return $this->convertExceptionToResponse($e);
+            if (view()->exists("motor-cms::errors.{$status}")) {
+                return response()->view("motor-cms::errors.{$status}", [ 'exception' => $exception ], $status,
+                    $exception->getHeaders());
+            } else {
+                return $this->convertExceptionToResponse($exception);
+            }
         }
+
     }
 }
