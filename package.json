@@ -17,7 +17,7 @@
     "@caohenghu/vue-colorpicker": "^1.2.4",
     "@ckeditor/ckeditor5-build-classic": "^12.4.0",
     "@ckeditor/ckeditor5-vue": "^1.0.3",
-    "@claviska/jquery-minicolors": "^2.3.5",
+    "@claviska/jquery-minicolors": "^2.3.6",
     "@coreui/coreui": "^3.4.0",
     "@fancyapps/fancybox": "^3.5.7",
     "@fortawesome/fontawesome-free": "^5.15.2",
